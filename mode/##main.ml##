@@ -1,0 +1,15 @@
+let rec two_sum lst target  =
+
+    let rec compare cur rest (i : int) =
+        match rest with
+        | [] -> None
+        | hd :: tl when cur + hd = target -> i
+        | hd :: tl -> compare hd tl (i+1)
+    in
+
+    match lst with
+    | [] -> None
+    | hd :: tl -> compare hd tl 0
+
+
+
